@@ -48,11 +48,6 @@ sbmBtn.onclick = () => {
         }
         getInfoMessage(counter, emptySpace, number);
         
-
-        if (inputArray == slashArray) {
-            hide(checkBtn);
-            hide(input2);
-        }
     }
     //checkIfArrayContainsSlash(slashArray);
 };
