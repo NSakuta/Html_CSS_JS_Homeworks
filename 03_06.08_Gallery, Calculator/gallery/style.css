@@ -1,0 +1,23 @@
+.img {
+    background-image: url('./images/animals.jpg');
+    background-size: cover;
+    width: 600px;
+    height: 450px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+.wrapper {
+    text-align: center;
+}
+.btn {
+    margin-top: 20px;
+}
+.item {
+
+}
+.show {
+    display: block;
+}
+.hide {
+    display: none;
+}
