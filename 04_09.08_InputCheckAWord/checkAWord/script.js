@@ -12,6 +12,7 @@ sbmBtn.onclick = () => {
     let inputValue1 = input.value.toLowerCase();
     let slash = '&#95; '
     let slashArray = [];
+    let bingo = 0;
     fillArr(slashArray, slash, count);
 
     const inputArray = [];
@@ -29,7 +30,6 @@ sbmBtn.onclick = () => {
    
     checkBtn.onclick = () => {
         let inputValue2 = document.querySelector('.input2').value.toLowerCase();
-        let counter = 0;
         let emptySpace = 0;
         let number = 0;
 
@@ -39,17 +39,16 @@ sbmBtn.onclick = () => {
                 lines.innerHTML = '';
                 renderP(slashArray);
                 document.querySelector('.input2').value = '';
-                counter++;
+                bingo++;
             } else if(inputValue2 === '') {
                 emptySpace++;
             } else if(!(isNaN(inputValue2))) {
                 number++;
             }
         }
-        getInfoMessage(counter, emptySpace, number);
-        
+        getInfoMessage(bingo, emptySpace, number, count);
+        console.log('bingo', bingo);
     }
-    //checkIfArrayContainsSlash(slashArray);
 };
 
 function hide(element) {
@@ -78,24 +77,19 @@ function renderP(array) {
     }
 };
 
-function checkIfArrayContainsSlash(array) {
-    for(let i = 0; i < array.length; i++) {
-        if(array[i] !== '&#95; '){
-            hide(checkBtn);
-            hide(input2);
-        }  
-    }
-};
-
-function getInfoMessage(counter, emptySpace, number) {
-    if(counter > 0) {
-        info.innerHTML = `Congratulation!`
+function getInfoMessage(bingo, emptySpace, number, count) {
+    if (bingo === count) {
+        hide(checkBtn);
+        hide(input2);
+        info.innerHTML = `Congratulation! You win!`
         document.querySelector('.input2').value = '';
+    } else if (bingo > 0 && bingo !== count) {
+        info.innerHTML = `Right!`
     } else if (emptySpace > 0 || number > 0) {
         info.innerHTML = `Please enter a valid data!`;
         document.querySelector('.input2').value = '';
     } else {
-        info.innerHTML = `UPS! Not such letter`;
+        info.innerHTML = `UPS! No such letter`;
         document.querySelector('.input2').value = '';
     }
     return info.innerHTML;

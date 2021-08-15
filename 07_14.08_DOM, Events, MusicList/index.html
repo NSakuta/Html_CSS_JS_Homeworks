@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music List</title>
+    <script src="script.js" defer></script>
+    <style>
+        
+        .wrapper {
+            width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .content {
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        button {
+            margin: 10px 10px;
+            display: inline;
+            width: 70px;
+            height: 40px;
+            border-radius: 2px;
+            background-color: rgb(164, 176, 177);
+            border: 1px solid rgb(164, 171, 172);
+            color: white;
+        }
+        .genre {
+            margin: 5px 5px;
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            _background-color: rgb(186, 187, 138);
+            text-align: center;
+            border: 1px solid rgb(137, 139, 139);
+        }
+        .genre:hover {
+            background-color: rgb(111, 116, 116);
+        }
+        .text {
+            margin: 0 auto;
+            margin-top: 45%;
+            color: white;
+        }
+        
+        .bigDiv {
+            padding: 40px;
+            width: 620px;
+            height: 620px;
+            border-radius: 10px;
+            color: white;
+        }
+        .hide {
+            display: block;
+        }
+        .show {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <button id="jazz-btn">Jazz</button>
+        <button id="rock-btn">Rock</button>
+        <button id="blues-btn">Blues</button>
+        <div class="content">
+            <!-- <div class="genre"><p class="text">Jazz-item</p></div> -->
+        </div>
+    </div>
+</body>
+</html>
