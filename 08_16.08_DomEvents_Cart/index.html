@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoping Cart</title>
+    <script src="script.js" defer></script>
+    <style>
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+        .container {
+            margin: 0 auto;
+            width: 1000px;
+        }
+        .navigation {
+            background-color: rgb(156, 151, 151);
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .wrapper {
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+        }
+        #box {
+            margin: 10px;
+            padding: 10px;
+            width: calc(100% / 4 - 20px);
+            height: fit-content;
+            _border: 1px solid black;
+            text-align: center;
+        }
+        .img {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-image: url(./img/B2B\ Ecommerce\ 2\ Cart\ Y.png);
+            background-size: cover;
+        }
+        button {
+            margin-bottom: 30px;
+            width: 130px;
+            height: 60px;
+            background-color: rgb(78, 141, 78);
+            color: white;
+            font-size: 18px;
+        }
+        .hide {
+            display: none;
+        }
+        #title {
+            color: rgb(78, 141, 78);
+        }
+        .table {
+            width: 100%;
+            text-align: left;
+            margin-top: 40px;
+        }
+        .table-title {
+            background-color: #333;
+            padding-top: 10px;
+            color: white;
+        }
+        .table-text {
+            padding: 10px;
+        }
+        
+        
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="topnav">
+            <a id ="homeBtn" class="active">Home</a>
+            <a id="cartBtn">Cart</a>
+          </div>
+          <div id="root" class="">
+        <!-- <div class="wrapper">
+            <table class="table">
+                <tr id="table-title">
+                  <th class="table-text">Title</th>
+                  <th>Price</th> 
+                  <th>Count</th>
+                  <th>Total</th>
+                </tr>
+                <tr>
+                  <td>Caeser salad</td>
+                  <td>6</td>
+                  <td>1</td>
+                  <td>6</td>
+                </tr>
+                <tr>
+                  <td>Tomato soup</td>
+                  <td>5</td>
+                  <td>1</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>Steak</td>
+                  <td>12</td>
+                  <td>2</td>
+                  <td>24</td>
+                </tr>
+                <tr>
+                    <td>Orange juice</td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>6</td>
+                  </tr>
+              </table>
+        </div>    
+    </div> -->
+</div>
+</body>
+</html>

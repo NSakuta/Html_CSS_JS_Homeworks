@@ -36,15 +36,8 @@ jazzbtn.onclick = () => {
 
         div[i].onclick = (event) => {
             const id = +event.currentTarget.id.split('_')[1];
-            const el = jazzInfoArray.find((item) => item.id === id);
             hide(div);
-            const bigDiv = document.createElement('div');
-            bigDiv.className = 'bigDiv';
-            bigDiv.style.backgroundColor = 'rgb(169, 160, 175)';
-            bigDiv.innerHTML = `<h3>${el.title}</h3><br><p>${el.text}</p>`;
-            bigDiv.classList.add = 'text-2';
-            content.append(bigDiv);
-            
+            styleForBigDiv(rockInfoArray, id, 'rgb(169, 160, 175)');   
         }
     }
     jazzbtn.style.backgroundColor = 'rgb(169, 160, 175)';
@@ -61,13 +54,8 @@ rockbtn.onclick = () => {
 
         div[i].onclick = (event) => {
             const id = +event.currentTarget.id.split('_')[1];
-            const el = rockInfoArray.find((item) => item.id === id);
             hide(div);
-            const bigDiv = document.createElement('div');
-            bigDiv.className = 'bigDiv';
-            bigDiv.style.backgroundColor = 'rgb(172, 194, 166)';
-            bigDiv.innerHTML = `<h3>${el.title}</h3><br><p>${el.text}</p>`;
-            content.append(bigDiv);
+            styleForBigDiv(rockInfoArray, id, 'rgb(172, 194, 166)'); 
             
         }
     }
@@ -85,15 +73,10 @@ bluesbtn.onclick = () => {
         div[i].style.backgroundColor = 'rgb(186, 187, 138)';
 
         div[i].onclick = (event) => {
-            const id = +event.currentTarget.id.split('_')[1];
-            const el = bluesInfoArray.find((item) => item.id === id);
             hide(div);
-            const bigDiv = document.createElement('div');
-            bigDiv.className = 'bigDiv';
-            bigDiv.style.backgroundColor = 'rgb(186, 187, 138)';
-            bigDiv.innerHTML = `<h3>${el.title}</h3><br><p>${el.text}</p>`;
-            content.append(bigDiv);
-            
+            const id = +event.currentTarget.id.split('_')[1];
+            hide(div);
+            styleForBigDiv(bluesInfoArray, id, 'rgb(186, 187, 138)');    
         }
     }
     bluesbtn.style.backgroundColor = 'rgb(186, 187, 138)';
@@ -128,4 +111,14 @@ function clearBtnBgColor(btn1, btn2, btn3){
     btn2.style.backgroundColor = 'rgb(164, 176, 177)';
     btn3.style.backgroundColor = 'rgb(164, 176, 177)';
 };
+
+function styleForBigDiv(arr, id, backgroundColor) {
+    const el = arr.find((item) => item.id === id);
+    const bigDiv = document.createElement('div');
+    bigDiv.className = 'bigDiv';
+    bigDiv.style.backgroundColor = backgroundColor;
+    bigDiv.innerHTML = `<h3>${el.title}</h3><br><p>${el.text}</p>`;
+    content.append(bigDiv);
+            
+}
 
