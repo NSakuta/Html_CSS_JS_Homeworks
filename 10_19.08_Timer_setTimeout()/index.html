@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <script src="script.js" defer></script>
+    <style>
+        .wrapper {
+            margin: 0 auto;
+            width: 800px;
+        }
+        .timer {
+            width: 400px;
+            padding: 20px;
+            margin: 0 auto;
+            border: 1px solid black;
+            text-align: center;
+        }
+        .control {
+            display: flex;
+            justify-content: center;
+        }
+        button {
+            padding: 5px 10px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+            font-size: 18px;
+        }
+        button:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+        }
+        #input {
+            width: 120px;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="timer">
+            <h2>Timer</h2>
+            <input type="number" id="input" min = "0">
+            <div class="control">
+                <button id="start-btn">Start</button>
+                <button id="stop-btn">Stop</button>
+            </div>
+            <h2 class="result"></h2>
+        </div>
+    </div>
+</body>
+</html>

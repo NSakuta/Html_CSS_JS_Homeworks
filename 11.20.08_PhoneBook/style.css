@@ -1,0 +1,125 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.menu-box {
+    background-color: #333;
+    width: 100%;
+    height: 50px;
+}
+.menu-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+.menu-list:first-child {
+    margin-left: 220px;
+}
+
+#contactList, #addContact {
+    float: left;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+/* Change the link color to (green) on hover */
+
+li a:hover {
+    background-color: #04AA6D;
+}
+#contactList, #addContact {
+    border-right: 1px solid #bbb;
+    border-left: 1px solid #bbb;
+
+}
+.wrapper {
+    width: 70%;
+    margin: 0 auto;
+}
+.form-wrapper {
+    padding-top: 100px;
+    width: fit-content;
+    margin: 0 auto;
+}
+#contact-form {
+    margin: 0 auto;
+}
+input, textarea {
+    width: 440px;
+    height: 30px;
+    margin: 15px 0px;
+    border: 1.5px solid #04AA6D;
+    border-radius: 10px;
+    text-align: justify;
+}
+textarea {
+    height: 60px;
+    
+}
+input::placeholder {
+    padding-left: 20px;
+}
+textarea::placeholder {
+    padding: 20px
+}
+#addBtn {
+    width: 80px;
+    height: 30px;
+    background-color: #04AA6D;
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    float: right;
+}
+#contactsLeft {
+    list-style: none;
+}
+.full-name {
+    font-size: 30px;
+    font-weight: 900;
+    padding: 10px 0px;
+}
+.left-list {
+    margin: 40px 0px;
+    position: relative;
+}
+#left-right-box {
+    margin-top: 50px;
+    display: flex;
+}
+#left, #right {
+    width: calc(100% / 2 - 20px);
+}
+.clearBtn {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 30%;
+}
+.p-left {
+    padding: 20px 0px;
+}
+
+.info {
+    margin-left: 90px;
+    margin-top: 40px;
+    border: 1px solid #04AA6D;
+    width: 80%;
+    height: fit-content;
+    background-color: #04aa6d2c;
+}
+.p-right {
+    padding: 20px;
+}
+.name-r {
+    margin-left: 20px;
+}

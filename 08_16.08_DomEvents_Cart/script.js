@@ -53,17 +53,24 @@ homeBtn.onclick = () => {
             const id = event.currentTarget.id.split('_')[1];
             let findObjWithSameId = items.find((el) => el.id == id);
 
-            const dublicate = cartArray.includes(findObjWithSameId);
-            
-            if(!dublicate) {
-                //findObjWithSameId.count = 1;
-                cartArray.push(findObjWithSameId);
-                cartArray[id].count = 1;
-            } else {
-                cartArray[id].count += 1;
+            const itemInCart = cartArray.find((el) => el.id == id);
+
+            if(itemInCart) {
+                itemInCart.count++;
+            } else {   ////////////// создании копии обьекта
+                cartArray.push({
+                    id,
+                    title: findObjWithSameId.title,
+                    price: findObjWithSameId.price,
+                    count: 1
+                })
             } 
         }
     }
+    
+    console.log('Items: ', items);
+    console.log('cartArray: ', cartArray);
+
 };
 
 cartBtn.onclick = () => {
@@ -118,7 +125,6 @@ function createCards(divWrapper) {
         divWrapper.append(box);
     }
 };
-console.log('Items: ', items)
 
 
 function createTable(table) {
