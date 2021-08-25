@@ -156,16 +156,19 @@ function createListOfContacts() {
                     console.log('Event(X button): ', event);
                     const id = event.currentTarget.id.split('_')[1];
                     console.log('click on X: ', id);
-                    const infos = document.querySelectorAll('.info');
 
                     let specificLi = document.querySelector(`#box_${id}`);
                     let specificInfo = document.querySelector(`#Info_${id}`);
 
-                    specificLi.remove();
-                    specificInfo.remove();
+                    if(specificLi) {
+                        specificLi.remove();
+                    }
+                    if(specificInfo) {
+                        specificInfo.remove();
+                    }
                     contactListArray.splice(id, 1);
    
-                event.stopPropagation();
+                //event.stopPropagation();
 
                 }   
             }
