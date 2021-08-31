@@ -72,9 +72,9 @@ function renderAddContact() {
         <input
         id="inputEmail"
         class="form-control"
-        type="text"
+        type="email"
         name="email"
-        placeholder="Type email"
+        placeholder="Type email" required
         />
         <input
         id="inputAddress"
@@ -157,18 +157,25 @@ function formSubmitHandler(event) {
     event.preventDefault();
     const form = event.target;
 
-    contacts.push({
-        name: form.name.value,
-        phone: form.phone.value,
-        email: form.email.value,
-        address: form.address.value,
-        //desc: form.desc.value
-    });
+    if(!formValidation(form)) {
+        contacts.push({
+            name: form.name.value,
+            phone: form.phone.value,
+            email: form.email.value,
+            address: form.address.value,
+            //desc: form.desc.value
+        });
+        showSuccess(form.name.value);
+    } else {
 
-    clearForm(form);
-    renderContacts();
-    currentPageLink = document.querySelector('a[href = "contacts"]');
-    navigationThroughPages('contacts');
+    }
+
+    
+
+    // clearForm(form);
+    // renderContacts();
+    // currentPageLink = document.querySelector('a[href = "contacts"]');
+    // navigationThroughPages('contacts');
 
 }
 
@@ -182,19 +189,21 @@ function clearForm(form) {
 
 //////////////////Search 
 
-searchInput.oninput = () => {
-    const filterContact = contacts.filter((item) =>
-        item.name.toLowerCase().startsWith(searchInput.value.toLowerCase()));
+// searchInput.oninput = () => {
+//     const filterContact = contacts.filter((item) =>
+//         item.name.toLowerCase().startsWith(searchInput.value.toLowerCase()));
 
-        renderContacts(filterContact);
-};
+//         renderContacts(filterContact);
+// };
 
-searchBtn.onclick = function () {
-    const city = searchInput.value.toLowerCase();
-    const contactsByCity = contacts.filter(item => item.address.toLowerCase() === city);
-    searchInput.value = '';
-    renderContacts(contactsByCity);
-}
+// searchBtn.onclick = function () {
+//     const city = searchInput.value.toLowerCase();
+//     const contactsByCity = contacts.filter(item => item.address.toLowerCase() === city);
+//     searchInput.value = '';
+//     renderContacts(contactsByCity);
+// }
+
+
 
 // document.body.onkeydown = function(e) {
 //     if(e.key === 'Enter') {
@@ -204,3 +213,49 @@ searchBtn.onclick = function () {
 
 // searchInput.addEventlistener('keydown', (e) => console.log(e)); // Option 2 
 
+///////////////////Validation
+
+function formValidation() {
+    const usersMistakes = false; 
+
+    for(let i of form) {
+        if(i.localName !== 'button') {
+            i.classList.remove('is-invalid');
+        
+        if(i.value.trim() === '') {
+            i.classList.add('is-invalid');
+            usersMistakes = true;
+            }
+        }
+        
+    }
+    if(usersMistakes) {
+        showError('Please, fill in all requiered fields!');
+    }
+    return usersMistakes;
+}
+
+function showError(errorText) {
+    let div = root.querySelector('.alert');
+    if(!div) {
+        div = document.createComment('div')
+        root.prepend(div);
+    }
+    div.className = 'alert alert-danger';
+    div.innerHTML = errorText;
+
+    return div;
+
+}
+
+function showSuccess(name) {
+    let div = root.querySelector('.alert');
+    if(!div) {
+        div = document.createComment('div')
+        root.prepend(div);
+    }
+    div.className = 'alert alert-success';
+    div.innerHTML = `${name}, you have success`;
+
+    return div;
+}
